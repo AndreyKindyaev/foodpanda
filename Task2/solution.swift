@@ -14,7 +14,7 @@ public func solution(_ A : inout [String]) -> Int {
     let maxAvailableLength = strings.reduce(0, { $0 + $1.count })
     // use N bits mask for concatenation combination
     // N in range [1..8] thus UInt8 is enough
-    let maxBitCombination = UInt8(pow(Double(2), Double(strings.count)) - 1)
+    let maxBitCombination = UInt8(1<<strings.count - 1)
     var maxLength = 0
     main: for bitCombination in 1...maxBitCombination {
         var restOfCombination = bitCombination
